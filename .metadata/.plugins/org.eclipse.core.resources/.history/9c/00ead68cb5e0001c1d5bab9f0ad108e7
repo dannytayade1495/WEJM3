@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tags Demo</title>
+</head>
+<body>
+	<%!int number1 = 10, number2 = 15; %>
+	<%int sum = number1 + number2; %>
+	<%=sum %>
+
+</body>
+</html>
