@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<jsp:include page="navBar.jsp" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management</title>
+<style type="text/css">
+fieldset table {
+	margin: auto;
+	text-align: left;
+}
+
+fieldset {
+	margin: 15px;
+}
+
+legend {
+	color: white;
+	background-color: #333;
+}
+</style>
+</head>
+<body>
+	<fieldset>
+		<legend>:::Update Employee:::</legend>
+		<table>
+			<tr>
+				<td><label>Enter Employee Id</label></td>
+				<td><input type="text" name="id" placeholder="Employee ID">
+				</td>
+			</tr>
+			<tr>
+				<td><label>Name</label></td>
+				<td><input type="radio" name="name"></td>
+			</tr>
+			<tr>
+				<td><label>Email</label></td>
+				<td><input type="radio" name="email"></td>
+			</tr>
+			<tr>
+				<td><label>Designation</label></td>
+				<td><input type="radio" name="designation"></td>
+			</tr>
+			<tr>
+				<td><label>Username</label></td>
+				<td><input type="radio" name="userName"></td>
+			</tr>
+			<tr>
+				<td><label>Password</label></td>
+				<td><input type="radio" name="password"></td>
+			</tr>
+		</table>
+	</fieldset>
+</body>
+</html>

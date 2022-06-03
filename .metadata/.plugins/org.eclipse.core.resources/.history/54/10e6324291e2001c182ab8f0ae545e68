@@ -1,0 +1,17 @@
+package com.jspider.mvcproject1.controller;
+
+lic String searchPage() {
+		return "searchEmployee";
+	}
+
+	@GetMapping("/remove")
+	public String removePage() {
+		return "removeEmployee";
+	}
+
+	@GetMapping("/update")
+	public String updatePage() {
+		return "updateEmployee";
+	}
+
+}

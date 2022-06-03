@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li><a href="./search">Search Employee</a></li>
+		<li><a href="./insert">Insert Employee</a></li>
+		<li><a href="./update">Update Employee</a></li>
+		<li><a href="./remove">Remove Employee</a></li>
+	</ul>
+</body>
+</html>

@@ -1,19 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<jsp:include page="navBar.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert Employee</title>
+<title>Employee Management</title>
+<style type="text/css">
+fieldset table {
+	margin: auto;
+	text-align: left;
+}
+
+fieldset {
+	margin: 15px 520px;
+	text-align: center;
+}
+
+legend {
+	color: white;
+	background-color: #333;
+}
+</style>
 </head>
 <body>
 	<fieldset>
-		<legend>Insert Employee Details</legend>
+		<legend>:::Insert Employee Details:::</legend>
 		<form action="">
-			<input type="text" value="name"> <input type="text"
-				value="email"> <input type="text" value="designation">
-			<input type="text" value="password"> <input type="submit"
-				value="SUBMIT">
+			<table>
+				<tr>
+					<td><label>Name</label></td>
+					<td><input type="text" name="name"
+						placeholder="Employee Full Name"></td>
+				</tr>
+				<tr>
+					<td><label>Email</label></td>
+					<td><input type="text" name="email"
+						placeholder="Employee Email"></td>
+				</tr>
+				<tr>
+					<td><label>Designation</label></td>
+					<td><input type="text" name="designation"
+						placeholder="Employee Designation"></td>
+				</tr>
+				<tr>
+					<td><label>Username</label></td>
+					<td><input type="text" name="userName"
+						placeholder="Employee Username"></td>
+				</tr>
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type="text" name="password"
+						placeholder="Employee Password"></td>
+				</tr>
+				<tr style="float: none;">
+					<td><input type="submit" value="SUBMIT"></td>
+				</tr>
+			</table>
 		</form>
 	</fieldset>
 </body>
