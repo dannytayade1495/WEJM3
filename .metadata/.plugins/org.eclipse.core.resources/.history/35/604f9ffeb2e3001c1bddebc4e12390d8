@@ -1,0 +1,16 @@
+package com.jspider.mvcproject1.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.jspider.mvcproject1.dto.EmployeeDTO;
+
+@Repository
+public class EmployeeDAO implements EmployeeDAOInterface {
+
+	@Override
+	public EmployeeDTO insert() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

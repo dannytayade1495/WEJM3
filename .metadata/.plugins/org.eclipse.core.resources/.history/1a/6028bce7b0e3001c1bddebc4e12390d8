@@ -1,0 +1,32 @@
+package com.jspider.mvcproject1.dto;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "employee_data")
+public class EmployeeDTO implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8175531986765377508L;
+	
+	private int id;
+	
+	private String name;
+	
+	private String email;
+	
+	private String desgination;
+	
+	private String userName;
+	
+	private String password;
+
+}

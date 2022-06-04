@@ -26,7 +26,7 @@ legend {
 <body>
 	<fieldset>
 		<legend>:::Insert Employee Details:::</legend>
-		<form action="">
+		<form action="./insert" method="post">
 			<table>
 				<tr>
 					<td><label>Name</label></td>

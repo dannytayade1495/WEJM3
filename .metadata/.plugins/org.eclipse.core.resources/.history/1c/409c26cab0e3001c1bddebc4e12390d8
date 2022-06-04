@@ -1,0 +1,12 @@
+package com.jspider.mvcproject1.dto;
+
+import java.io.Serializable;
+
+public class EmployeeDTO implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8175531986765377508L;
+
+}

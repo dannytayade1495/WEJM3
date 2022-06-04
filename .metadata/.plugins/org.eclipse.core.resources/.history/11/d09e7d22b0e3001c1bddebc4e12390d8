@@ -1,0 +1,5 @@
+package com.jspider.mvcproject1.dto;
+
+public class EmployeeDTO {
+
+}

@@ -1,0 +1,16 @@
+package com.jspider.mvcproject1.service;
+
+import org.springframework.stereotype.Service;
+
+import com.jspider.mvcproject1.dto.EmployeeDTO;
+
+@Service
+public class EmployeeService implements EmployeeServiceInterface {
+
+	@Override
+	public EmployeeDTO insert() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

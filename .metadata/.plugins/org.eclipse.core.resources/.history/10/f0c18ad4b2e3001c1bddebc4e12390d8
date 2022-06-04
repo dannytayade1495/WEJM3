@@ -1,0 +1,13 @@
+package com.jspider.mvcproject1.dao;
+
+import com.jspider.mvcproject1.dto.EmployeeDTO;
+
+public class EmployeeDAO implements EmployeeDAOInterface {
+
+	@Override
+	public EmployeeDTO insert() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
