@@ -31,6 +31,7 @@ li a:hover {
 </head>
 <body>
 	<ul>
+		<li><a style="color: white;" href="./logout">Logout</a></li>
 		<li><a style="color: white;" href="./search">Search Employee</a></li>
 		<li><a style="color: white;" href="./insert">Insert Employee</a></li>
 		<li><a style="color: white;" href="./update">Update Employee</a></li>

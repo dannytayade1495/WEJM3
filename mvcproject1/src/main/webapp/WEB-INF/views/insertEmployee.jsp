@@ -1,6 +1,13 @@
+<%@page import="com.jspider.mvcproject1.dto.EmployeeDTO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <jsp:include page="navBar.jsp" />
+<%
+String message = (String) request.getAttribute("msg");
+%>
+<%
+EmployeeDTO employee = (EmployeeDTO) request.getAttribute("employee");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,5 +66,48 @@ legend {
 			</table>
 		</form>
 	</fieldset>
+	<%
+	if (message != null) {
+	%>
+	<h3 style="text-align: center; color: #28F473;"><%=message%></h3>
+	<%
+	}
+	%>
+	<%
+	if (employee != null) {
+	%>
+	<table style="width: 100%;">
+		<thead>
+			<tr>
+				<th><label>Employee ID</label></th>
+				<th><label>Employee Name</label></th>
+				<th><label>Employee Email</label></th>
+				<th><label>Employee Designation</label></th>
+				<th><label>Employee UserName</label></th>
+				<th><label>Employee Password</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="text-align: center;">
+
+				<td><%=employee.getId()%></td>
+
+				<td><%=employee.getName()%></td>
+
+				<td><%=employee.getEmail()%></td>
+
+				<td><%=employee.getDesgination()%></td>
+
+				<td><%=employee.getUserName()%></td>
+
+				<td><%=employee.getPassword()%></td>
+			</tr>
+		</tbody>
+
+
+	</table>
+	<%
+	}
+	%>
 </body>
 </html>

@@ -1,9 +1,0 @@
-package com.jspider.mvcproject1.controller;
-
-public class EmployeeController {
-	
-	public String insertEmployee() {
-		return "insertEmployee";
-	}
-
-}

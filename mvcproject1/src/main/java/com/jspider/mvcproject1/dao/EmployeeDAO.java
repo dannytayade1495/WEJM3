@@ -1,9 +1,12 @@
 package com.jspider.mvcproject1.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -33,9 +36,9 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 
 	@Override
 	public EmployeeDTO insert(String name, String email, String designation, String userName, String password) {
-		
+
 		openConnections();
-		
+
 		transaction.begin();
 
 		EmployeeDTO employee = new EmployeeDTO();
@@ -53,5 +56,78 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 
 		return employee;
 	}
+
+	@Override
+	public void remove(int id) {
+		openConnections();
+
+		transaction.begin();
+
+		EmployeeDTO employee = manager.find(EmployeeDTO.class, id);
+
+		manager.remove(employee);
+
+		transaction.commit();
+
+		closeConnections();
+
+	}
+
+	@Override
+	public List<EmployeeDTO> findAllEmployees() {
+		openConnections();
+
+		transaction.begin();
+
+		String jpql = "from EmployeeDTO";
+
+		Query query = manager.createQuery(jpql);
+		List<EmployeeDTO> list = query.getResultList();
+
+		transaction.commit();
+
+		closeConnections();
+
+		return list;
+	}
+
+	@Override
+	public EmployeeDTO search(int id) {
+		openConnections();
+
+		transaction.begin();
+
+		EmployeeDTO find = manager.find(EmployeeDTO.class, id);
+		transaction.commit();
+		closeConnections();
+
+		return find;
+	}
+
+	@Override
+	public EmployeeDTO login(String userName, String password) {
+		openConnections();
+		transaction.begin();
+		String jpql = "from EmployeeDTO where userName ='" + userName + "' and password = '" + password + "'";
+		Query createQuery = manager.createQuery(jpql);
+		try {
+			EmployeeDTO employee = (EmployeeDTO) createQuery.getSingleResult();
+			if (employee != null) {
+				transaction.commit();
+				closeConnections();
+				return employee;
+			}
+		} catch (Exception e) {
+			closeConnections();
+			return null;
+		}
+		return null;
+	}
+
+//	public static void main(String[] args) {
+//		EmployeeDAO dao = new EmployeeDAO();
+//		List<EmployeeDTO> findAllEmployees = dao.findAllEmployees();
+//		System.out.println(findAllEmployees);
+//	}
 
 }
