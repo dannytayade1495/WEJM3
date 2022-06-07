@@ -22,6 +22,26 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService service;
 
+	@GetMapping("/login")
+	public String login() {
+		return "loginPage";
+	}
+
+	@PostMapping("/login")
+	public String loginData(HttpSession session, HttpServletRequest request, @RequestParam String userName,
+			@RequestParam String password, ModelMap map) {
+
+		EmployeeDTO employee = service.login(userName, password);
+		if (employee != null) {
+			session = request.getSession();
+			session.setAttribute("login", employee);
+			session.setMaxInactiveInterval(300);
+			return "homePage";
+		}
+		map.addAttribute("msg", "Invalid username or password..!!");
+		return "loginPage";
+	}
+
 	@GetMapping("/insert")
 	public String insertPage(ModelMap map, @SessionAttribute(name = "login", required = false) EmployeeDTO login) {
 		if (login != null) {
@@ -42,6 +62,7 @@ public class EmployeeController {
 				map.addAttribute("employee", employee);
 				return "insertEmployee";
 			}
+			map.addAttribute("msg", "Employee record not inserted..!!");
 			return "insertEmployee";
 		}
 		map.addAttribute("msg", "Please login and try again..!!");
@@ -147,26 +168,6 @@ public class EmployeeController {
 
 		}
 		map.addAttribute("msg", "Please login and try again..!!");
-		return "loginPage";
-	}
-
-	@GetMapping("/login")
-	public String login() {
-		return "loginPage";
-	}
-
-	@PostMapping("/login")
-	public String loginData(HttpSession session, HttpServletRequest request, @RequestParam String userName,
-			@RequestParam String password, ModelMap map) {
-
-		EmployeeDTO employee = service.login(userName, password);
-		if (employee != null) {
-			session = request.getSession();
-			session.setAttribute("login", employee);
-			session.setMaxInactiveInterval(300);
-			return "homePage";
-		}
-		map.addAttribute("msg", "Invalid username or password..!!");
 		return "loginPage";
 	}
 
