@@ -4,12 +4,14 @@
 	pageEncoding="ISO-8859-1"%>
 <jsp:include page="navBar.jsp" />
 <%
+String msg = (String) request.getAttribute("msg");
+%>
+<%
 List<EmployeeDTO> employees = (List<EmployeeDTO>) request.getAttribute("employees");
 %>
 <%
-String msg = (String) request.getAttribute("msg");
+EmployeeDTO employee = (EmployeeDTO) request.getAttribute("employee");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,12 +35,54 @@ legend {
 </style>
 </head>
 <body>
-
-
-
+	<%
+	if (employee != null) {
+	%>
+	<form action="./updateData" method="post">
+		<fieldset>
+			<legend></legend>
+			<table>
+				<tr hidden="true">
+					<td><label>ID</label></td>
+					<td><input type="text" name="id" value="<%=employee.getId()%>"></td>
+				</tr>
+				<tr>
+					<td><label>Name</label></td>
+					<td><input type="text" name="name"
+						value="<%=employee.getName()%>"></td>
+				</tr>
+				<tr>
+					<td><label>Email</label></td>
+					<td><input type="text" name="email"
+						value="<%=employee.getEmail()%>"></td>
+				</tr>
+				<tr>
+					<td><label>Designation</label></td>
+					<td><input type="text" name="designation"
+						value="<%=employee.getDesgination()%>"></td>
+				</tr>
+				<tr>
+					<td><label>Username</label></td>
+					<td><input type="text" name="userName"
+						value="<%=employee.getUserName()%>"></td>
+				</tr>
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type="text" name="password"
+						value="<%=employee.getPassword()%>"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="UPDATE"></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<%
+	} else {
+	%>
 	<form action="./update" method="post">
 		<fieldset>
-			<legend>:::Update Employee:::</legend>
+			<legend>:::Select Employee To Update:::</legend>
 			<table>
 				<tr>
 					<td><label>ID</label></td>
@@ -102,7 +146,9 @@ legend {
 	</table>
 	<%
 	}
+	}
 	%>
+
 
 </body>
 </html>

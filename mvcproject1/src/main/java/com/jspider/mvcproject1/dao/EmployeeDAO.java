@@ -124,10 +124,20 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 		return null;
 	}
 
-//	public static void main(String[] args) {
-//		EmployeeDAO dao = new EmployeeDAO();
-//		List<EmployeeDTO> findAllEmployees = dao.findAllEmployees();
-//		System.out.println(findAllEmployees);
-//	}
+	@Override
+	public void update(int id, String name, String email, String designation, String userName, String password) {
+		openConnections();
+		transaction.begin();
+		EmployeeDTO employee = manager.find(EmployeeDTO.class, id);
+		employee.setName(name);
+		employee.setEmail(email);
+		employee.setDesgination(designation);
+		employee.setUserName(userName);
+		employee.setPassword(password);
+		manager.persist(employee);
+		transaction.commit();
+		closeConnections();
+
+	}
 
 }

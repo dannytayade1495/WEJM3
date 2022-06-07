@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Mon Jun 06 08:38:38 IST 2022
+#Tue Jun 07 09:07:15 IST 2022
 org.eclipse.jst.jee.server\:mvcproject1=C\:\\Users\\Dhananjay\\Downloads\\apache-tomcat-9.0.63\\wtpwebapps\\mvcproject1
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Dhananjay\\.m2\\repository\\org\\springframework\\spring-web\\5.3.18\\spring-web-5.3.18.jar=C\:\\Users\\Dhananjay\\Downloads\\apache-tomcat-9.0.63\\wtpwebapps\\mvcproject1\\WEB-INF\\lib\\spring-web-5.3.18.jar
