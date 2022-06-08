@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\WEJM3\springrestproject1"/>
 			<item value="D:\WEJM3\mvcproject1\pom.xml"/>
 			<item value="D:\WEJM3\hibernate3\pom.xml"/>
 			<item value="D:\WEJM3\hibernate2\src\main\java\com\jspiders\hibernate2\dto\FatherDTO.java"/>
@@ -32,18 +33,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.jspiders.mvcproject"/>
-			<item value="com.jspider.mvcproject1"/>
-			<item value="com.jspider.springannotations"/>
+			<item value="com.jspiders.springrestproject2"/>
+			<item value="com.jspiders.springrestproject1"/>
 		</list>
 		<list key="groupId">
 			<item value="com.jspiders"/>
-			<item value="com.jspider"/>
 		</list>
 		<list key="artifactId">
-			<item value="mvcproject"/>
-			<item value="mvcproject1"/>
-			<item value="springannotations"/>
+			<item value="springrestproject2"/>
+			<item value="springrestproject1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
